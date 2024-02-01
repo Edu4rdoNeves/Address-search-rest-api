@@ -3,8 +3,8 @@ package business
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 
-	"github.com/Edu4rdoNeves/Address-search-api/constants"
 	"github.com/Edu4rdoNeves/Address-search-api/model"
 	"github.com/Edu4rdoNeves/Address-search-api/service"
 )
@@ -22,7 +22,7 @@ func NewAddressBusiness() IAddressBusiness {
 }
 
 func (c *AddressBusiness) FindAddressByViaCep(cep string) (*model.AddressByViaCep, error) {
-	url := fmt.Sprintf(constants.ViacepBaseUrl, cep)
+	url := fmt.Sprintf(os.Getenv("VIACEP_BASE_URL"), cep)
 
 	responseData, err := service.FindAddress(url)
 	if err != nil {
@@ -39,7 +39,7 @@ func (c *AddressBusiness) FindAddressByViaCep(cep string) (*model.AddressByViaCe
 }
 
 func (c *AddressBusiness) FindAddressByCorreios(cep string) (*model.AddressByCorreios, error) {
-	url := fmt.Sprintf(constants.CorreiosBaseUrl, cep)
+	url := fmt.Sprintf(os.Getenv("CORREIOS_BASE_URL"), cep)
 
 	responseData, err := service.FindAddress(url)
 	if err != nil {
