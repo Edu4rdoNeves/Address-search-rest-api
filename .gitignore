@@ -1,0 +1,20 @@
+# Arquivo .env
+.env
+
+# Arquivos de compilação
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Arquivos de log e temporários
+*.log
+*.log.*
+logs/
+tmp/
+temp/
+
+#go
+go.mod
+go.sum
