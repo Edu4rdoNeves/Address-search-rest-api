@@ -45,7 +45,9 @@ Para executar o projeto, siga os passos abaixo:
 1. Certifique-se de ter o Go instalado em seu sistema.
 2. Clone este repositório.
 3. Navegue até o diretório do projeto.
-4. Execute o comando `go run main.go` para iniciar o servidor.
+4. Digite o comando `go mod tidy` para garantir que o seu `go.mod` esteja atualizado com todas as dependências necessárias.
+5. Em seguida, se desejar, você pode executar `go mod vendor` para atualizar o diretório vendor com as dependências necessárias.
+6. Execute o comando `go run main.go` para iniciar o servidor.
 
 ## Exemplos de Uso
 
